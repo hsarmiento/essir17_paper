@@ -29,9 +29,9 @@ In contrast, our proposal uses the recurring mention of a country-locations in m
 \maketitle
 
 \section{Introduction}
-Social media has become a major channel for communication during high-impact real events, for example: elections, sports events, emergency situations, etc. In any event, users act as social sensors where they share and post their mood, opinions, photos, videos and exact location by GPS in only eight per cent of messages.
+Social media has become a major channel for communication during high-impact real events, for example: elections, sports events, emergency situations, etc. In any event, users act as social sensors where they share and post their mood, opinions, photos, videos and exact location by GPS in only three per cent of messages.
 
-Microblogging plays a critical role during emergency situations because traditional media have damage to infrastructure and affected people can not express their current status. For this reason, researchers have studied the behaviour during these events for to detect, summarize and classify messages with the goal of helping authorities and the general public with situational awareness.
+Microblogging plays a critical role during emergency situations because social media enable to communicate quickly and real-time current status of the affected people when a unusual event occur. Thus, microblogging offers an additional way to track the course of a disaster and the effectiveness of the response as perceived by the public. For this reason, researchers have studied the behaviour during these events for to detect, summarize and classify messages with the goal of helping authorities and the general public with situational awareness.
 
 In current works, \cite{ashktorab2014tweedr}, \cite{imranaidr2014}, \cite{kumar2011tweettracker} detect, summarize and classify messages using method rely on keywords over Twitter public streaming API. The problem with these keyword-based methods is the need for training in specific domains for different types of events. In general terms, to label data for classification is hard work because it requires time, human supervision and external sources as crowdsourcing. Furthermore, \cite{olteanu2014} generate a set of keywords based on different disaster datasets, but sometimes specific terms spontaneously arise for one event, for example \textit{\#eqnz} for Earthquake in New Zealand or \textit{\#pabloph} for Typhoon Pablo in Philippines.
 
@@ -53,7 +53,7 @@ We collect random messages without using keywords or bounding box for three days
 	\caption{Number of Tweets by Signal}
 	\begin{tabular}{|l|l|}
 		\hline
-		Total Tweet    & 13,655,428 \\ \hline
+		Total Tweets    & 13,655,428 \\ \hline
 		Countrytxt     & 66,996     \\ \hline
 		Countryusr     & 47,818     \\ \hline
 		Countrygeo     & 1,161      \\ \hline
@@ -74,7 +74,7 @@ For each signal, we consider original tweets and retweets, compute their frequen
 
 \section{Results and Discussion}
 
-We compare signals when the earthquake occurs. In all cases, signals detect a new emergency situation except the \textit{countrygeo} signal having lower frequency, but represent the exact place where from the message was sent. This result is due to small portion of users using GPS coordinates when sharing a message (about to eight per cent or less). The other signals correctly detect  a new emergency situation because its maximum values coincide with an earthquake's datetime.
+We compare signals when the earthquake occurs. In all cases, signals detect a new emergency situation except the \textit{countrygeo} signal having lower frequency, but represent the exact place where from the message was sent. This result is due to small portion of users using GPS coordinates when sharing a message (about to three per cent or less). The other signals correctly detect  a new emergency situation because its maximum values coincide with an earthquake's datetime, which can be explained by an unusual high-impact event that affect in country-level.
 
 However, the signals that represent country-locations in the text message or the location of the user profile, exhibit noise that can generate a burst for other event types. Sometimes these signals have a relative behaviour that depends on the average daily user's activity of country. 
 
@@ -97,7 +97,9 @@ On the other hand, considering a sub-time series before an earthquake, bins are 
 \section{Conclusions}
 Detecting an emergency situation without using a specific-domain of keywords is important because training data is hard work for researchers. We presented a proposal for detecting this event type using only locations associated with the country. These locations, unlike keywords, do not change over time and do not emerge spontaneously as new terms during an emergency situation.
 
-In the future, we will research other emergency situations, but with local impact in the first phase after an event, e.g. terrorist attack, plane crash, etc.
+In the future, we will to include a fine-grained hierarchy for each location which contains country-state-city level with the aim of examining local impact in the first phase after an event. Also, we will compare our approach with keyword-based methods for detecting emergency situation, for example, \cite{kumar2011tweettracker} and \cite{cameron2012emergency}. For this task, we will use public datasets that are generated by \cite{imranaidr2014}. Furthermore, we will inspect the most frequent key phrases and hashtags in the tweets in the burst identified by our method.
+
+
 
 \begin{thebibliography}{9}
 
@@ -109,6 +111,13 @@ In the future, we will research other emergency situations, but with local impac
 Ashktorab, Z., C.~Brown, M.~Nandi, and A.~Culotta (2014).
 \newblock Tweedr: Mining twitter to inform disaster response.
 \newblock {\em Proc. of ISCRAM\/}.
+
+\bibitem[\protect\citeauthoryear{Cameron, Power, Robinson, and Yin}{Cameron
+	et~al.}{2012}]{cameron2012emergency}
+Cameron, M.~A., R.~Power, B.~Robinson, and J.~Yin (2012).
+\newblock Emergency situation awareness from twitter for crisis management.
+\newblock In {\em Proceedings of the 21st International Conference on World
+	Wide Web}, pp.\  695--698. ACM.
 
 \bibitem[\protect\citeauthoryear{Imran, Castillo, Lucas, Meier, and
 	Vieweg}{Imran et~al.}{2014}]{imranaidr2014}
