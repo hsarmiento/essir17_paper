@@ -217,17 +217,10 @@
 
 \titlespacing*{\paragraph}{0pt}{0pt \@plus 2pt \@minus 2pt}{-10pt}
                                                                    
-\def\runningheads#1#2{\markboth{#1}{#2}}
-\def\conference#1{\def\myfooter{\it #1}}
+%\def\runningheads#1#2{\markboth{#1}{#2}}
+%\def\conference#1{\def\myfooter{\it #1}}
 
-\def\ps@mytitle{\let\@mkboth\@gobbletwo%
-\def\@oddfoot{\parbox[c]{\textwidth}{\small{\it%
-\copyright\ The Authors.\ Published by BISL.}\hfill\thepage\hfill\phantom{\small\it \copyright\ The Authors.\ Published by BISL.}\\
-\myfooter\mbox\hfill}}
-\let\@evenfoot\@oddfoot
-\def\@oddhead{}
-\let\@evenhead\@oddhead%
-}
+
 
 \def\ps@myewic{%
 \let\@mkboth\@gobbletwo%
